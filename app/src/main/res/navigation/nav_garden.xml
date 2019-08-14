@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@+id/garden_fragment">
+
+    <fragment android:id="@+id/garden_fragment"
+              android:name="com.code.flower.GardenFragment"
+              android:label="@string/my_garden_title"
+              tools:layout="@layout/fragment_garden">
+        <action
+                android:id="@+id/action_garden_fragment_to_plan_detail_fragment"
+                app:destination="@+id/plan_detail_fragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_in_left"
+                app:popEnterAnim="@anim/slide_out_left"
+                app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment android:id="@+id/plan_list_fragment"
+              android:name="com.code.flower.PlanListFragment"
+              android:label="@string/plant_list_title"
+              tools:layout="@layout/fragment_plan_list">
+        <action android:id="@+id/action_plan_list_fragment_to_plan_detail_fragment"
+                app:destination="@id/plan_detail_fragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_in_left"
+                app:popEnterAnim="@anim/slide_out_right"
+                app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment android:id="@+id/plan_detail_fragment"
+              android:name="com.code.flower.PlanDetailFragment"
+              android:label="@string/plant_details_title"
+              tools:layout="@layout/fragment_plan_detail">
+        <argument android:name="planId" app:argType="string"/>
+    </fragment>
+
+</navigation>
