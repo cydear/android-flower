@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.code.flower.databinding.FragmentGardenBinding
 
 /**
  * [类功能说明]
@@ -14,8 +15,13 @@ import androidx.fragment.app.Fragment
  * @email huangyang@xianglin.cn
  */
 class GardenFragment : Fragment() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_garden, container,false)
-        return view
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val binding = FragmentGardenBinding.inflate(inflater, container, false)
+
+        return binding.root
     }
 }
